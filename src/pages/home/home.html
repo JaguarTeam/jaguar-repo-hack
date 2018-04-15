@@ -1,0 +1,32 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/imgs/splash.png">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-header no-border>
+  <ion-navbar transparent>
+  </ion-navbar> 
+</ion-header>
+<ion-content>
+  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background': '#0D355F'}">
+    </ion-slide>
+  </ion-slides>
+  <div class="login-container">
+    <img class="logo" src="assets/imgs/logo1.png" />
+    <form (submit)="doLogin()">
+      <strong>Login:</strong>
+      <ion-item>
+        <ion-input type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+      <button ion-button round margin color="#1083FF">LOGIN</button>
+      <p (click)="openResetPassword()"><strong>Forgot your password?</strong></p>
+    </form>
+  </div>
+</ion-content>
